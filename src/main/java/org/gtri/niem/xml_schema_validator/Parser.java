@@ -33,6 +33,7 @@ public class Parser
       setFeature("http://apache.org/xml/features/validation/schema/element-default", true);
       setFeature("http://apache.org/xml/features/validation/schema/normalized-value", true);
       setFeature("http://apache.org/xml/features/validation/warn-on-duplicate-attdef", true);
+      setFeature("http://apache.org/xml/features/validation/warn-on-undeclared-elemdef", true);
       setFeature("http://apache.org/xml/features/warn-on-duplicate-entitydef", true);
       setFeature("http://xml.org/sax/features/external-general-entities", true);
       setFeature("http://xml.org/sax/features/external-parameter-entities", true);
