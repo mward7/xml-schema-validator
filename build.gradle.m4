@@ -1,7 +1,7 @@
 apply plugin: 'java'
 
-version = 'M_PACKAGE_VERSION'
-buildDir = 'M_GRADLE_BUILD_DIR'
+version = '0.1'
+buildDir = 'build'
 
 task(debug, dependsOn: 'classes', type: JavaExec) {
     main = 'org.gtri.niem.schema_assembly.CLI'
@@ -13,8 +13,8 @@ task(debug, dependsOn: 'classes', type: JavaExec) {
 jar {
     manifest {
         attributes 'Implementation-Title': 'XML Schema Validator',
-                   'Implementation-Version': version,
-		   'Main-Class': 'org.gtri.niem.xml_schema_validator.CLI'
+                'Implementation-Version': version,
+		        'Main-Class': 'org.gtri.niem.xml_schema_validator.CLI'
     }
 }
 
@@ -26,10 +26,11 @@ dependencies {
     compile 'commons-cli:commons-cli:1.2'
     compile 'xerces:xercesImpl:2.11.0'
     compile 'org.slf4j:slf4j-api:1.7.7'
+    // compile 'org.slf4j:slf4j-api:1.7.25'
     compile 'org.slf4j:slf4j-simple:1.7.7'
     compile 'org.slf4j:slf4j-ext:1.7.7'
     compile 'xml-resolver:xml-resolver:1.2'
-
+    testCompile 'junit:junit:4.12'
     // testCompile group: 'junit', name: 'junit', version: '4.+'
 }
 
@@ -39,9 +40,9 @@ test {
 
 uploadArchives {
     repositories {
-       flatDir {
-           dirs 'repos'
-       }
+        flatDir {
+            dirs 'repos'
+        }
     }
 }
 
