@@ -36,6 +36,10 @@ dependencies {
 
 test {
     systemProperties 'property': 'value'
+
+    useJUnit()
+
+    maxHeapSize = '1G'
 }
 
 uploadArchives {
